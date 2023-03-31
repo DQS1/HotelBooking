@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hotel_booking/modules/hotel_details/rating_view.dart';
+import 'package:hotel_booking/modules/hotel_details/review_data_view.dart';
 
 import '../../language/appLocalizations.dart';
 import '../../models/hotel_list_data.dart';
@@ -14,6 +16,7 @@ import '../../utils/text_styles.dart';
 import '../../utils/themes.dart';
 import '../../widgets/common_button.dart';
 import '../../widgets/common_card.dart';
+import 'hotel_room_list.dart';
 
 class HotelDetailes extends StatefulWidget {
   final HotelListData hotelData;
@@ -143,34 +146,34 @@ class _HotelDetailesState extends State<HotelDetailes>
                     ),
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.only(
-                //     left: 24,
-                //     right: 24,
-                //     top: 8,
-                //     bottom: 16,
-                //   ),
-                //   // overall rating view
-                //   child: RatingView(hotelData: widget.hotelData),
-                // ),
-                // _getPhotoReviewUi(
-                //     "room_photo", 'view_all', Icons.arrow_forward, () {}),
-                //
-                // // Hotel inside photo view
-                // HotelRoomeList(),
-                // _getPhotoReviewUi("reviews", 'view_all', Icons.arrow_forward,
-                //         () {
-                //       NavigationServices(context).gotoReviewsListScreen();
-                //     }),
-                //
-                // // feedback&Review data view
-                // for (var i = 0; i < 2; i++)
-                //   ReviewsView(
-                //     reviewsList: HotelListData.reviewsList[i],
-                //     animation: animationController,
-                //     animationController: animationController,
-                //     callback: () {},
-                //   ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 24,
+                    right: 24,
+                    top: 8,
+                    bottom: 16,
+                  ),
+                  // overall rating view
+                  child: RatingView(hotelData: widget.hotelData),
+                ),
+                _getPhotoReviewUi(
+                    "room_photo", 'view_all', Icons.arrow_forward, () {}),
+
+                // Hotel inside photo view
+                HotelRoomeList(),
+                _getPhotoReviewUi("reviews", 'view_all', Icons.arrow_forward,
+                        () {
+                      NavigationServices(context).gotoReviewsListScreen();
+                    }),
+
+                //feedback&Review data view
+                for (var i = 0; i < 2; i++)
+                  ReviewsView(
+                    reviewsList: HotelListData.reviewsList[i],
+                    animation: animationController,
+                    animationController: animationController,
+                    callback: () {},
+                  ),
 
                 SizedBox(
                   height: 16,

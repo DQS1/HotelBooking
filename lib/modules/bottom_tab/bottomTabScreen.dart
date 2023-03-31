@@ -7,8 +7,9 @@ import 'package:hotel_booking/widgets/common_card.dart';
 import 'package:provider/provider.dart';
 
 import '../explore/home_explore_screen.dart';
-import '../myTrips/myTripsScreen.dart';
-import '../profile/profileScreen.dart';
+import '../myTrips/my_trip_screen.dart';
+
+import '../profile/profile_screen.dart';
 import 'compoments/tabButtonUI.dart';
 
 class BottomTabScreen extends StatefulWidget {
